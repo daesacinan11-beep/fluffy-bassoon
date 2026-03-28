@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d4f4c" />
+    <meta name="description" content="A birthday surprise" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="assets/favicon-theme.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title id="meta-title">Birthday surprise</title>
+  </head>
+  <body>
+    <audio id="ambient-bgm" loop playsinline preload="metadata" aria-hidden="true"></audio>
+    <button
+      type="button"
+      class="bgm-toggle"
+      id="bgm-toggle"
+      hidden
+      aria-pressed="true"
+      aria-label="Mute background music"
+    >
+      ♪
+    </button>
+    <div class="wrap">
+      <p class="brand" id="brand-line"></p>
+      <main id="app" aria-live="polite"></main>
+      <div class="deco-cluster" aria-hidden="true">
+        <img src="assets/theme-lily.png" alt="" width="80" height="94" />
+        <img src="assets/theme-hydrangea.png" alt="" width="80" height="74" />
+        <img class="deco-wide" src="assets/theme-mogu.png" alt="" width="72" height="115" />
+        <img class="deco-wide" src="assets/theme-oishi.png" alt="" width="72" height="92" />
+      </div>
+      <footer class="note">
+        Lily of the valley &amp; hydrangeas, lychee Mogu Mogu, Oishi chips — and you.
+        <br />
+        Made for April 2 — just for you.
+      </footer>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      (function () {
+        var cfg = window.GIFT_CONFIG;
+        var el = document.getElementById("brand-line");
+        if (el && cfg && cfg.meta && cfg.meta.herName) {
+          el.textContent = "For " + cfg.meta.herName;
+        }
+      })();
+    </script>
+  </body>
+</html>

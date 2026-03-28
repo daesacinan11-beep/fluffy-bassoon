@@ -1,0 +1,9 @@
+{
+  "name": "Birthday scavenger hunt",
+  "short_name": "For you",
+  "description": "A private birthday surprise",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0a1520",
+  "theme_color": "#0d4f4c"
+}
